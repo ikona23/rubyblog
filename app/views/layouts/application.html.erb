@@ -46,21 +46,21 @@
 
 
   <div class="large-9 columns" role="content">
-
+    <hr/>
     <div class="buttons">
 
-      <button class="button"><%= link_to "All Post", root_path %></button>
-      <button class="button"><%= link_to "New Post", new_post_path %></button>
+      <%= link_to "All Post", root_path, :class => :button %>
+  <%= link_to "New Post", new_post_path, :class => :button %>
 
       <% if user_signed_in? %>
-          <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-          <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+          <li><%= link_to 'Edit account', edit_user_registration_path, :class => :button %></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete', :class => :button %></li>
       <% end %>
 
       <button class="button"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
     Log Out</button>
     </div>
-
+    <hr/>
 
     <article>
 
@@ -69,6 +69,7 @@
       <% end %>
 
       <%= yield %>
+      <hr/>
     </article>
 
   </div>
@@ -96,19 +97,15 @@
     </ul>
 
     <div class="panel">
-      <h5>about me</h5>
-      <p>Hi, my name is Peter Kona and I am a Web Developer & Designer among other things. I love crafting web pages in HTML5, CSS3, Ruby on Rails and jQuery. When I'm not I'm working on projects i am spending most of my time exploring new technologies and learning new tricks.
-        If you want to hire me or just to talk, connect with me.
+      <h5>Dev blog</h5>
+      <p> This is the place for question and answers, about web_dev
       </p>
-      <a href="http://peterkona.herokuapp.com">Read More →</a>
+      <a href="http://peterkona.herokuapp.com">Please check my presonal website →</a>
     </div>
 
   </aside>
 
 </div>
-
-
-
 
 
 

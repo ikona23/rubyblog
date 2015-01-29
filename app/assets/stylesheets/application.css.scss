@@ -25,6 +25,7 @@ html, body {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
+  list-style:none;
 }
 h1 {
 
@@ -60,9 +61,10 @@ h1 {
 
 body {
   background-color: #ececec;
+  list-style:none;
 }
 .panel {
-  background: #323232;
+  background: #7a2a31;
   color: ghostwhite;
 }
   .panel p{
@@ -75,13 +77,12 @@ body {
 }
 .button:hover {
   color: #ececec;
-  background: #d0d0d7;
-
+  background: #f8f8ff;
 }
-
 
 .row {
   background-color: #ececf3;
+  list-style:none;
 }
 .post_wrapper {
   background-color: #ececf3;
@@ -99,8 +100,12 @@ a {
   font-size:20px;
 
 }
+.side-nav li {
+  list-style:none;
+  color: #420000;
+}
 
-#sidebar {
+.sidebar {
   width: 250px;
   position: fixed;
   left: 0;
@@ -109,7 +114,6 @@ a {
   background: #f5f7f9;
   padding: 7em 0 0 0;
   border-right: 1px solid #d6dce0;
-
   ul {
     list-style: none;
     text-align: right;
@@ -118,10 +122,12 @@ a {
       font-weight: 700;
       font-size: 0.7em;
       text-transform: uppercase;
-      color: #323232;
+      list-style:none;
+      color:red;
     }
     li {
       padding: .5em 0;
+      list-style:none;
       a {
         color: #9eafba;
         text-decoration: none;
@@ -148,16 +154,16 @@ a {
 
 .button {
   outline: none;
-  background: transparent;
-  border: 1px solid #d6dce0;
+  background: #b73a43;
+  border: 1px solid #b73a43;
   padding: .5em 1.5em;
   border-radius: 1.5em;
-  color:#33acb7;
+  color: rgba(248, 248, 255, 0.98);
   &:hover {
-    border: 1px solid #33acb7;
-    color: #33acb7;
+    border: 1px solid #4b1e25;
+    color: #7a2a31;
     a {
-      color: #33acb7 !important;
+      color: #cbcbd2 !important;
     }
   }
 }
@@ -169,7 +175,9 @@ a {
   height: 0;
   clear: both;
 }
-
+#large-3columns {
+  list-style:none;
+}
 #main_content {
   #header {
     padding: 1em 3em;
@@ -203,7 +211,8 @@ a {
         color: #2a2f35;
         font-size: 1.5em;
         &:hover {
-          color: #33acb7;
+          color: #1a3d47;
+          list-style:none;
         }
       }
     }
