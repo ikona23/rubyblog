@@ -1,14 +1,144 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IkoBlog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+  <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+  <link href="http://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet" type="text/css">
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class="row">
+  <div class="large-12 columns">
+    <div class="nav-bar right">
+      <!--<ul class="button-group">-->
+        <!--<li><a href="#" class="button">Link 1</a></li>-->
+        <!--<li><a href="#" class="button">Link 2</a></li>-->
+        <!--<li><a href="#" class="button">Link 3</a></li>-->
+        <!--<li><a href="#" class="button">Link 4</a></li>-->
+      <!--</ul>-->
+    </div>
+    <div class="header">
+    <div id="logo">
+      <%= link_to root_path do %>
+          <%= image_tag "logo.svg" %>
+          <!--<p>ikona blog</p>-->
+      <% end %>
+    </div>
+    <h1 class="ggn">Dev Blog </h1>
+    <h4 class="title4">Code never lies, comments sometimes do.
+      </h4>
+    <h6 class="titlee">— Ron Jeffries</h6>
+</br>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+
+
+  <div class="large-9 columns" role="content">
+
+    <div class="buttons">
+
+      <button class="button"><%= link_to "All Post", root_path %></button>
+      <button class="button"><%= link_to "New Post", new_post_path %></button>
+
+      <% if user_signed_in? %>
+          <li><%= link_to 'Edit account', edit_user_registration_path %></li>
+          <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+      <% end %>
+
+      <button class="button"><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+    Log Out</button>
+    </div>
+
+
+    <article>
+
+      <% flash.each do |name, msg| %>
+          <%= content_tag(:div, msg, class: "alert") %>
+      <% end %>
+
+      <%= yield %>
+    </article>
+
+  </div>
+
+  <aside class="large-3 columns">
+
+    <h5>Categories</h5>
+    <ul class="side-nav">
+      <ul>
+        <li class="category">Website</li>
+        <li><%= link_to "Blog", root_path %></li>
+        <li>About</li>
+      </ul>
+
+      <ul>
+        <li class="category">Social</li>
+        <li><a href="https://twitter.com/ikona23">Twitter</a></li>
+        <li><a href="http://instagram.com/ikona23">Instagram</a></li>
+        <li><a href="https://github.com/ikona23">Github</a></li>
+        <li><a href="mailto:ikona23@gmail.com">Email</a></li>
+      </ul>
+
+      <p class="sign_in">Admin Login</p>
+
+    </ul>
+
+    <div class="panel">
+      <h5>Featured</h5>
+      <p>Hi, my name is Peter Kona and I am a Web Developer & Designer among other things. I love crafting web pages in HTML5, CSS3, Ruby on Rails and jQuery. When I'm not I'm working on projects i am spending most of my time exploring new technologies and learning new tricks.
+        If you want to hire me or just to talk, connect with me.
+      </p>
+      <a href="#">Read More →</a>
+    </div>
+
+  </aside>
+
+</div>
+
+
+
+
+
+
+<footer class="row">
+  <div class="large-12 columns">
+    <hr/>
+    <div class="row">
+      <div class="large-6 columns">
+        <p>© Copyright no one at all. Go to town.</p>
+      </div>
+      <div class="large-6 columns">
+        <ul class="inline-list right">
+          <div class="buttons">
+
+            <button class="button"><%= link_to "All Post", root_path %></button>
+            <button class="button"><%= link_to "New Post", new_post_path %></button>
+            <button class="button">Log In</button>
+            <button class="button">Log Out</button>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
+
+
+
+
+
+
