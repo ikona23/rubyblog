@@ -67,7 +67,7 @@
       <% flash.each do |name, msg| %>
           <%= content_tag(:div, msg, class: "alert") %>
       <% end %>
-
+      <hr/>
       <%= yield %>
       <hr/>
     </article>
@@ -102,12 +102,8 @@
       </p>
       <a href="http://peterkona.herokuapp.com">Please check my presonal website →</a>
     </div>
-
   </aside>
-
 </div>
-
-
 
 <footer class="row">
   <div class="large-12 columns">
